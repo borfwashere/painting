@@ -4,9 +4,9 @@ var publicationsData = {
     "title": "Anzoàtegui",
     "images": [
       "img/2013/Anzoàtegui/504344632_9852755461472881_5112040032877214478_n.jpg",
-      "img/2013/Anzoàtegui/IMG_20260904_091738_107_upscayl_2x_upscayl-standard-4x.png",
-      "img/2013/Anzoàtegui/IMG_20260904_091738_515_upscayl_2x_upscayl-standard-4x.png",
-      "img/2013/Anzoàtegui/IMG_20260904_091738_605_upscayl_2x_upscayl-standard-4x.png",
+      "img/2013/Anzoàtegui/IMG_20260904_091738_107_upscayl_2x_upscayl-standard-4x.jpg",
+      "img/2013/Anzoàtegui/IMG_20260904_091738_515_upscayl_2x_upscayl-standard-4x.jpg",
+      "img/2013/Anzoàtegui/IMG_20260904_091738_605_upscayl_2x_upscayl-standard-4x.jpg",
       "img/2013/Anzoàtegui/SaveClip.App_652769808_18076151753578493_8593194584494561758_n.jpg"
     ]
   },
@@ -18,7 +18,7 @@ var publicationsData = {
       "img/2013/Conexiòn/IMG_20260904_085059_516.jpg",
       "img/2013/Conexiòn/IMG_20260904_085059_666.jpg",
       "img/2013/Conexiòn/Picsart_26-09-04_09-07-02-005.jpg",
-      "img/2013/Conexiòn/SaveClip.App_653442922_18097955236948171_8597308045234077595_n_upscayl_2x_upscayl-standard-4x.png"
+      "img/2013/Conexiòn/SaveClip.App_653442922_18097955236948171_8597308045234077595_n_upscayl_2x_upscayl-standard-4x.jpg"
     ]
   },
   {

@@ -46,9 +46,9 @@ var publicationsData = {
       "title": "Anzoàtegui",
       "images": [
         "img/2013/Anzoàtegui/504344632_9852755461472881_5112040032877214478_n.jpg",
-        "img/2013/Anzoàtegui/IMG_20260904_091738_107_upscayl_2x_upscayl-standard-4x.png",
-        "img/2013/Anzoàtegui/IMG_20260904_091738_515_upscayl_2x_upscayl-standard-4x.png",
-        "img/2013/Anzoàtegui/IMG_20260904_091738_605_upscayl_2x_upscayl-standard-4x.png",
+        "img/2013/Anzoàtegui/IMG_20260904_091738_107_upscayl_2x_upscayl-standard-4x.jpg",
+        "img/2013/Anzoàtegui/IMG_20260904_091738_515_upscayl_2x_upscayl-standard-4x.jpg",
+        "img/2013/Anzoàtegui/IMG_20260904_091738_605_upscayl_2x_upscayl-standard-4x.jpg",
         "img/2013/Anzoàtegui/SaveClip.App_652769808_18076151753578493_8593194584494561758_n.jpg"
       ]
     },
@@ -60,7 +60,7 @@ var publicationsData = {
         "img/2013/Conexiòn/IMG_20260904_085059_516.jpg",
         "img/2013/Conexiòn/IMG_20260904_085059_666.jpg",
         "img/2013/Conexiòn/Picsart_26-09-04_09-07-02-005.jpg",
-        "img/2013/Conexiòn/SaveClip.App_653442922_18097955236948171_8597308045234077595_n_upscayl_2x_upscayl-standard-4x.png"
+        "img/2013/Conexiòn/SaveClip.App_653442922_18097955236948171_8597308045234077595_n_upscayl_2x_upscayl-standard-4x.jpg"
       ]
     },
     {
@@ -120,11 +120,11 @@ var publicationsData = {
     {
       "title": "estudio de tinta ii",
       "images": [
-        "img/2014/estudio de tinta ii/1000359737_upscayl_2x_upscayl-standard-4x.png",
-        "img/2014/estudio de tinta ii/1000359739_upscayl_2x_upscayl-standard-4x.png",
-        "img/2014/estudio de tinta ii/1000359740_upscayl_2x_upscayl-standard-4x.png",
-        "img/2014/estudio de tinta ii/1000359741_upscayl_2x_upscayl-standard-4x.png",
-        "img/2014/estudio de tinta ii/1000359742_upscayl_2x_upscayl-standard-4x.png"
+        "img/2014/estudio de tinta ii/1000359737_upscayl_2x_upscayl-standard-4x.jpg",
+        "img/2014/estudio de tinta ii/1000359739_upscayl_2x_upscayl-standard-4x.jpg",
+        "img/2014/estudio de tinta ii/1000359740_upscayl_2x_upscayl-standard-4x.jpg",
+        "img/2014/estudio de tinta ii/1000359741_upscayl_2x_upscayl-standard-4x.jpg",
+        "img/2014/estudio de tinta ii/1000359742_upscayl_2x_upscayl-standard-4x.jpg"
       ]
     },
     {
@@ -502,17 +502,17 @@ var publicationsData = {
         "img/2023/Intangibles/Gemini_Generated_Image_rs7jzxrs7jzxrs7j.jpg",
         "img/2023/Intangibles/SaveClip.App_653576833_18098946380489097_6133576141714803116_n.jpg",
         "img/2023/Intangibles/SaveClip.App_661574832_18309413323279634_588500230958122275_n.jpg",
-        "img/2023/Intangibles/_MG_1892-1C.png",
-        "img/2023/Intangibles/_MG_1893-2.png",
-        "img/2023/Intangibles/_MG_1895-3.png",
-        "img/2023/Intangibles/_MG_1896-4.png",
-        "img/2023/Intangibles/_MG_1903-6.png",
-        "img/2023/Intangibles/_MG_1904-7.png",
-        "img/2023/Intangibles/_MG_1905-8C.png",
-        "img/2023/Intangibles/_MG_1906-9.png",
-        "img/2023/Intangibles/_MG_1908-10.png",
-        "img/2023/Intangibles/_MG_1911-13.png",
-        "img/2023/Intangibles/_MG_1912-14.png",
+        "img/2023/Intangibles/_MG_1892-1C.jpg",
+        "img/2023/Intangibles/_MG_1893-2.jpg",
+        "img/2023/Intangibles/_MG_1895-3.jpg",
+        "img/2023/Intangibles/_MG_1896-4.jpg",
+        "img/2023/Intangibles/_MG_1903-6.jpg",
+        "img/2023/Intangibles/_MG_1904-7.jpg",
+        "img/2023/Intangibles/_MG_1905-8C.jpg",
+        "img/2023/Intangibles/_MG_1906-9.jpg",
+        "img/2023/Intangibles/_MG_1908-10.jpg",
+        "img/2023/Intangibles/_MG_1911-13.jpg",
+        "img/2023/Intangibles/_MG_1912-14.jpg",
         "img/2023/Intangibles/ignorance.jpg",
         "img/2023/Intangibles/obra.jpg",
         "img/2023/Intangibles/photo_2026-09-09_04-03-01.jpg",
@@ -622,8 +622,8 @@ var publicationsData = {
         "img/2024/Silencio/IMG_20241006_204335_edit_402513872687076.jpg",
         "img/2024/Silencio/IMG_20241006_204458_edit_402440924393145.jpg",
         "img/2024/Silencio/SaveClip.App_626169866_18093403759808925_185813555063072591_n (1).jpg",
-        "img/2024/Silencio/_MG_1982-2C.png",
-        "img/2024/Silencio/_MG_1984-3C.png"
+        "img/2024/Silencio/_MG_1982-2C.jpg",
+        "img/2024/Silencio/_MG_1984-3C.jpg"
       ]
     },
     {

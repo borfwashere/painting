@@ -32,11 +32,11 @@ var publicationsData = {
   {
     "title": "estudio de tinta ii",
     "images": [
-      "img/2014/estudio de tinta ii/1000359737_upscayl_2x_upscayl-standard-4x.png",
-      "img/2014/estudio de tinta ii/1000359739_upscayl_2x_upscayl-standard-4x.png",
-      "img/2014/estudio de tinta ii/1000359740_upscayl_2x_upscayl-standard-4x.png",
-      "img/2014/estudio de tinta ii/1000359741_upscayl_2x_upscayl-standard-4x.png",
-      "img/2014/estudio de tinta ii/1000359742_upscayl_2x_upscayl-standard-4x.png"
+      "img/2014/estudio de tinta ii/1000359737_upscayl_2x_upscayl-standard-4x.jpg",
+      "img/2014/estudio de tinta ii/1000359739_upscayl_2x_upscayl-standard-4x.jpg",
+      "img/2014/estudio de tinta ii/1000359740_upscayl_2x_upscayl-standard-4x.jpg",
+      "img/2014/estudio de tinta ii/1000359741_upscayl_2x_upscayl-standard-4x.jpg",
+      "img/2014/estudio de tinta ii/1000359742_upscayl_2x_upscayl-standard-4x.jpg"
     ]
   },
   {

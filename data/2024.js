@@ -60,8 +60,8 @@ var publicationsData = {
       "img/2024/Silencio/IMG_20241006_204335_edit_402513872687076.jpg",
       "img/2024/Silencio/IMG_20241006_204458_edit_402440924393145.jpg",
       "img/2024/Silencio/SaveClip.App_626169866_18093403759808925_185813555063072591_n (1).jpg",
-      "img/2024/Silencio/_MG_1982-2C.png",
-      "img/2024/Silencio/_MG_1984-3C.png"
+      "img/2024/Silencio/_MG_1982-2C.jpg",
+      "img/2024/Silencio/_MG_1984-3C.jpg"
     ]
   },
   {

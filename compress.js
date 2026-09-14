@@ -2,18 +2,19 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const MAX_WIDTH = 1200;
+const MAX_WIDTH = 2000;
 const QUALITY = 80;
 const IMG_DIR = path.join(__dirname, 'img');
 
+const PNG_RENAMES = [];
+
 async function compressImage(filePath) {
     const ext = path.extname(filePath).toLowerCase();
-    if (!['.jpg', '.jpeg', '.png'].includes(ext)) return;
+    if (!['.jpg', '.jpeg', '.png', '.gif', '.webp'].includes(ext)) return;
 
     try {
         const metadata = await sharp(filePath).metadata();
         const needsResize = metadata.width > MAX_WIDTH;
-        const isJpg = ['.jpg', '.jpeg'].includes(ext);
 
         let pipeline = sharp(filePath);
 
@@ -21,17 +22,33 @@ async function compressImage(filePath) {
             pipeline = pipeline.resize({ width: MAX_WIDTH, withoutEnlargement: true });
         }
 
-        if (isJpg) {
+        const isPng = ext === '.png';
+        let outPath = filePath;
+
+        if (isPng) {
+            outPath = filePath.replace(/\.png$/i, '.jpg');
+            pipeline = pipeline.jpeg({ quality: QUALITY, mozjpeg: true });
+            PNG_RENAMES.push({ from: filePath, to: outPath });
+        } else if (ext === '.gif') {
+            outPath = filePath.replace(/\.gif$/i, '.jpg');
+            pipeline = pipeline.jpeg({ quality: QUALITY, mozjpeg: true });
+        } else if (ext === '.webp') {
+            outPath = filePath.replace(/\.webp$/i, '.jpg');
             pipeline = pipeline.jpeg({ quality: QUALITY, mozjpeg: true });
         } else {
-            pipeline = pipeline.png({ quality: QUALITY, compressionLevel: 9 });
+            pipeline = pipeline.jpeg({ quality: QUALITY, mozjpeg: true });
         }
 
-        await pipeline.toFile(filePath + '.tmp');
-        fs.renameSync(filePath + '.tmp', filePath);
+        const tmpPath = outPath + '.tmp';
+        await pipeline.toFile(tmpPath);
+        fs.renameSync(tmpPath, outPath);
 
-        const stat = fs.statSync(filePath);
-        console.log(`  OK: ${path.relative(IMG_DIR, filePath)} (${(stat.size / 1024).toFixed(1)}KB)`);
+        if (outPath !== filePath) {
+            fs.unlinkSync(filePath);
+        }
+
+        const stat = fs.statSync(outPath);
+        console.log(`  OK: ${path.relative(IMG_DIR, outPath)} (${(stat.size / 1024).toFixed(1)}KB)`);
     } catch (err) {
         console.error(`  ERROR: ${path.relative(IMG_DIR, filePath)} - ${err.message}`);
     }
@@ -54,6 +71,7 @@ async function main() {
     console.log(`Directorio: ${IMG_DIR}`);
     console.log(`Ancho maximo: ${MAX_WIDTH}px`);
     console.log(`Calidad: ${QUALITY}%`);
+    console.log(`PNGs se convertiran a JPEG`);
     console.log('');
 
     if (!fs.existsSync(IMG_DIR)) {
@@ -62,6 +80,13 @@ async function main() {
     }
 
     await processDir(IMG_DIR);
+
+    if (PNG_RENAMES.length > 0) {
+        console.log('');
+        console.log('=== PNGs convertidos a JPEG ===');
+        console.log(JSON.stringify(PNG_RENAMES, null, 2));
+    }
+
     console.log('');
     console.log('Compresion completada.');
 }
