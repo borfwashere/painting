@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/publications.css">
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+    <style>
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+    </style>
+</head>
+<body class="page-blog site-alignment-center site-titlelogo-position-right header-position-fixed project-hover-zoom project-hover-panning autohide-footer social-icon-style-normal collection-type-page collection-layout-default view-list">
+
+    <div id="navigator">
+
+        <header id="topBar">
+
+            <div id="mobileNav">
+                <nav id="mobile-navigation">
+                    <div id="mobile-navigation-label">Menu</div>
+                    <ul data-content-field="navigation-mobileNav">
+                        <li class="folder">
+                            <button class="folder-toggle">YEAR <span id="current-year-mobile"></span></button>
+                            <ul id="mobile-work-list" class="folder-child">
+                                <li><a href="#">2012</a></li>
+                                <li><a href="#">2013</a></li>
+                                <li><a href="#">2014</a></li>
+                                <li><a href="#">2015</a></li>
+                                <li><a href="#">2016</a></li>
+                                <li><a href="#">2017</a></li>
+                                <li><a href="#">2018</a></li>
+                                <li><a href="#">2019</a></li>
+                                <li><a href="#">2020</a></li>
+                                <li><a href="#">2021</a></li>
+                                <li><a href="#">2022</a></li>
+                                <li><a href="#">2023</a></li>
+                                <li><a href="#">2024</a></li>
+                                <li><a href="#">2025</a></li>
+                                <li><a href="#">2026</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div data-content-field="site-title" class="siteTitle">
+                <a href="#">Painting</a>
+            </div>
+
+            <nav class="main-nav dropdown-hover">
+                <ul id="nav" data-content-field="navigation-mainNav">
+                    <li class="folders-collection folder active-link active-folder">
+                        <a>YEAR<span id="current-year"></span></a>
+                        <div class="subnav">
+                            <ul id="main-work-list">
+                                <li class="blog-collection"><a href="#">2012</a></li>
+                                <li class="blog-collection"><a href="#">2013</a></li>
+                                <li class="blog-collection"><a href="#">2014</a></li>
+                                <li class="blog-collection"><a href="#">2015</a></li>
+                                <li class="blog-collection"><a href="#">2016</a></li>
+                                <li class="blog-collection"><a href="#">2017</a></li>
+                                <li class="blog-collection"><a href="#">2018</a></li>
+                                <li class="blog-collection"><a href="#">2019</a></li>
+                                <li class="blog-collection"><a href="#">2020</a></li>
+                                <li class="blog-collection"><a href="#">2021</a></li>
+                                <li class="blog-collection"><a href="#">2022</a></li>
+                                <li class="blog-collection"><a href="#">2023</a></li>
+                                <li class="blog-collection"><a href="#">2024</a></li>
+                                <li class="blog-collection"><a href="#">2025</a></li>
+                                <li class="blog-collection"><a href="#">2026</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <section id="container">
+            <div id="container-content">
+
+                <div id="publications-container"></div>
+
+                <footer id="bottomBar">
+                    <div>
+                        <div class="social-accounts social-links footer-social" data-content-field="connected-accounts">
+                    </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </div>
+
+    <script src="data/data.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

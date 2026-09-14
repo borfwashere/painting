@@ -1,0 +1,151 @@
+/* Publications Masonry Styles */
+
+.publication {
+    margin-bottom: 60px;
+}
+
+.publication-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.publication-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.publication-date {
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.masonry-grid {
+    column-count: 3;
+    column-gap: 15px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.03);
+}
+
+.publication-separator {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 60px 0;
+}
+
+/* Publication Actions (Like + Share) */
+.publication-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.like-btn,
+.share-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #888;
+    padding: 4px;
+    transition: color 0.2s ease;
+}
+
+.like-btn:hover,
+.share-btn:hover {
+    color: #222;
+}
+
+.like-btn .heart-icon {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.like-btn.liked {
+    color: #e74c3c;
+}
+
+.like-btn.liked .heart-icon {
+    fill: #e74c3c;
+    stroke: #e74c3c;
+}
+
+.like-count {
+    font-size: 14px;
+    font-family: var(--font-display);
+    min-width: 12px;
+    text-align: center;
+}
+
+.share-btn {
+    position: relative;
+}
+
+.share-btn svg {
+    fill: currentColor;
+}
+
+.share-feedback {
+    position: absolute;
+    top: -8px;
+    right: 0;
+    font-size: 11px;
+    color: #27ae60;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.share-feedback.show {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .masonry-grid {
+        column-count: 2;
+        column-gap: 10px;
+    }
+    .masonry-item {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry-grid {
+        column-count: 1;
+    }
+    .publication-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

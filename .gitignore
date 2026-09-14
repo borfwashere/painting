@@ -1,0 +1,8 @@
+node_modules/
+img-compressed/
+actualizar.bat
+actualizar.js
+reordenar.js
+plan.txt
+data/publications.json
+editor/
