@@ -139,13 +139,37 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 639px) {
     .masonry-grid {
         column-count: 1;
+        column-gap: 0;
+    }
+    .masonry-item {
+        margin-bottom: 12px;
     }
     .publication-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+    }
+    .publication-title {
+        font-size: 18px;
+        letter-spacing: 0.5px;
+    }
+    .publication-actions {
+        gap: 10px;
+    }
+    .like-btn,
+    .share-btn {
+        padding: 10px;
+        min-width: 44px;
+        min-height: 44px;
+        justify-content: center;
+    }
+    .like-count {
+        font-size: 13px;
+    }
+    .publication-separator {
+        margin: 40px 0;
     }
 }
