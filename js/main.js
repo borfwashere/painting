@@ -1,28 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // ===== Detect Mode =====
-    var urlParams = new URLSearchParams(window.location.search);
-    var isYearPage = urlParams.has('y');
-    var currentYear = urlParams.get('y');
 
-    // ===== Load Publications Data =====
-    var data = typeof publicationsData !== 'undefined' ? publicationsData : null;
-
-    if (!data) {
-        console.error('publicationsData not loaded.');
-    } else {
-        applySavedOrders(data);
-
-        if (isYearPage && currentYear && data[currentYear]) {
-            // Year page mode: show only this year's publications directly
-            buildYearPage(data, currentYear);
-        } else {
-            // All-years mode: show all years with section switching
-            applySectionOrders(data);
-            buildPublications(data);
-        }
-
-        initLikes();
-    }
 
     // ===== Helper: Generate Slug =====
     function generateSlug(title) {
@@ -189,9 +166,35 @@ document.addEventListener('DOMContentLoaded', function () {
                         imagesHTML += '<div class="masonry-item" data-index="' + imgIndex + '" draggable="false">';
                         imagesHTML += '<img src="' + imgSrc + '" alt="' + pub.title + '" loading="lazy" onerror="this.style.display=\'none\'; console.warn(\'Imagen no encontrada:\', \'' + imgSrc.replace(/'/g, "\\'") + '\')">';
                         imagesHTML += '</div>';
-                    });
-                }
+    });
 
+    // ===== Expose initPublications globally for year-data.js =====
+    window.initPublications = function() {
+        var data = typeof publicationsData !== 'undefined' ? publicationsData : null;
+        if (!data) return;
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var isYearPage = urlParams.has('y');
+        var currentYear = urlParams.get('y');
+
+        applySavedOrders(data);
+
+        if (isYearPage && currentYear && data[currentYear]) {
+            buildYearPage(data, currentYear);
+        } else {
+            applySectionOrders(data);
+            buildPublications(data);
+        }
+
+        initLikes();
+    };
+
+    // Auto-init if data is already available (painting.html path)
+    if (typeof publicationsData !== 'undefined') {
+        window.initPublications();
+    }
+
+}
                 var slug = generateSlug(pub.title);
                 var pubId = year + '/' + slug;
 
@@ -462,6 +465,32 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
+    }
+
+    // ===== Expose initPublications globally for year-data.js =====
+    window.initPublications = function() {
+        var data = typeof publicationsData !== 'undefined' ? publicationsData : null;
+        if (!data) return;
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var isYearPage = urlParams.has('y');
+        var currentYear = urlParams.get('y');
+
+        applySavedOrders(data);
+
+        if (isYearPage && currentYear && data[currentYear]) {
+            buildYearPage(data, currentYear);
+        } else {
+            applySectionOrders(data);
+            buildPublications(data);
+        }
+
+        initLikes();
+    };
+
+    // Auto-init if data is already available (painting.html path)
+    if (typeof publicationsData !== 'undefined') {
+        window.initPublications();
     }
 
 });

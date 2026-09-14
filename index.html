@@ -4,41 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painting</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background: #fff; }
-        .year-list { list-style: none; padding: 0; margin: 0; }
-        .year-list li { border-bottom: 1px solid #eee; }
-        .year-list li a {
-            display: block; padding: 20px 30px; color: #000;
-            text-decoration: none; font-size: 16px; text-transform: lowercase;
-        }
-        .year-list li a:hover { background: #f5f5f5; }
-        .year-list li.empty a { color: #bbb; }
-        .header { padding: 30px; text-align: left; }
-        .header h1 { font-size: 14px; font-weight: normal; color: #999; margin: 0; text-transform: lowercase; }
-    </style>
 </head>
 <body>
-    <div class="header">
-        <h1>painting</h1>
-    </div>
-    <nav>
-        <ul class="year-list" id="year-list"></ul>
-    </nav>
     <script>
         var years = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
-        var emptyYears = [2021];
-        var list = document.getElementById('year-list');
-        years.forEach(function(year) {
-            var li = document.createElement('li');
-            if (emptyYears.indexOf(year) !== -1) li.className = 'empty';
-            var a = document.createElement('a');
-            a.href = 'year.html?y=' + year;
-            a.textContent = year;
-            li.appendChild(a);
-            list.appendChild(li);
-        });
+        window.location.href = 'year.html?y=' + years[years.length - 1];
     </script>
 </body>
 </html>
