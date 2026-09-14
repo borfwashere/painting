@@ -348,19 +348,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ===== Mobile Folder Toggle =====
-    var folderParents = document.querySelectorAll('.folder-parent > a');
-    folderParents.forEach(function (toggle) {
+    var folderToggles = document.querySelectorAll('.folder-toggle');
+    folderToggles.forEach(function (toggle) {
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
-            var parent = this.closest('.folder-parent');
-            if (parent) {
-                var childWrapper = parent.querySelector('.folder-child-wrapper');
-                if (childWrapper) {
-                    var child = childWrapper.querySelector('.folder-child');
-                    if (child) {
-                        child.classList.toggle('open');
-                        parent.classList.toggle('dropdown-open');
-                    }
+            var li = this.closest('.folder');
+            if (li) {
+                var child = li.querySelector('.folder-child');
+                if (child) {
+                    child.classList.toggle('open');
                 }
             }
         });

@@ -482,8 +482,6 @@ body.sqs-mobile-nav-open #mobile-navigation ul,
 
 .folder-child {
     display: none;
-    height: 0;
-    overflow: hidden;
     opacity: 1;
     margin-top: 0;
     padding-left: 1rem;
@@ -491,7 +489,6 @@ body.sqs-mobile-nav-open #mobile-navigation ul,
 
 .folder-child.open {
     display: block;
-    height: auto;
 }
 
 .folder-child li a {
@@ -613,6 +610,10 @@ html.wf-loading * {
     }
 
     #mobileNav {
+        display: block;
+    }
+
+    #mobile-navigation {
         display: block;
     }
 
