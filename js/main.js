@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-
     // ===== Helper: Generate Slug =====
     function generateSlug(title) {
         return title
@@ -166,35 +165,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         imagesHTML += '<div class="masonry-item" data-index="' + imgIndex + '" draggable="false">';
                         imagesHTML += '<img src="' + imgSrc + '" alt="' + pub.title + '" loading="lazy" onerror="this.style.display=\'none\'; console.warn(\'Imagen no encontrada:\', \'' + imgSrc.replace(/'/g, "\\'") + '\')">';
                         imagesHTML += '</div>';
-    });
+                    });
+                }
 
-    // ===== Expose initPublications globally for year-data.js =====
-    window.initPublications = function() {
-        var data = typeof publicationsData !== 'undefined' ? publicationsData : null;
-        if (!data) return;
-
-        var urlParams = new URLSearchParams(window.location.search);
-        var isYearPage = urlParams.has('y');
-        var currentYear = urlParams.get('y');
-
-        applySavedOrders(data);
-
-        if (isYearPage && currentYear && data[currentYear]) {
-            buildYearPage(data, currentYear);
-        } else {
-            applySectionOrders(data);
-            buildPublications(data);
-        }
-
-        initLikes();
-    };
-
-    // Auto-init if data is already available (painting.html path)
-    if (typeof publicationsData !== 'undefined') {
-        window.initPublications();
-    }
-
-}
                 var slug = generateSlug(pub.title);
                 var pubId = year + '/' + slug;
 
