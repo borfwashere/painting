@@ -462,4 +462,124 @@ document.addEventListener('DOMContentLoaded', function () {
         window.initPublications();
     }
 
+    // ===== Mobile Carousel =====
+    function isMobile() {
+        return window.innerWidth <= 639;
+    }
+
+    function initCarousels() {
+        var grids = document.querySelectorAll('.masonry-grid');
+        grids.forEach(function(grid) {
+            if (grid.querySelector('.mobile-carousel')) return;
+            if (grid.children.length <= 1) return;
+
+            var slides = Array.prototype.slice.call(grid.children);
+            var pubId = grid.getAttribute('data-pub-id');
+
+            var carousel = document.createElement('div');
+            carousel.className = 'mobile-carousel';
+            carousel.setAttribute('data-pub-id', pubId || '');
+
+            var track = document.createElement('div');
+            track.className = 'carousel-track';
+
+            slides.forEach(function(item, i) {
+                var slide = document.createElement('div');
+                slide.className = 'carousel-slide' + (i === 0 ? ' active' : '');
+                slide.appendChild(item.cloneNode(true));
+                track.appendChild(slide);
+            });
+
+            var prevBtn = document.createElement('button');
+            prevBtn.className = 'carousel-btn carousel-prev';
+            prevBtn.textContent = '\u2039';
+            prevBtn.setAttribute('aria-label', 'Imagen anterior');
+
+            var nextBtn = document.createElement('button');
+            nextBtn.className = 'carousel-btn carousel-next';
+            nextBtn.textContent = '\u203A';
+            nextBtn.setAttribute('aria-label', 'Imagen siguiente');
+
+            var counter = document.createElement('div');
+            counter.className = 'carousel-counter';
+            counter.textContent = '1 / ' + slides.length;
+
+            carousel.appendChild(track);
+            carousel.appendChild(prevBtn);
+            carousel.appendChild(nextBtn);
+            carousel.appendChild(counter);
+
+            grid.parentNode.insertBefore(carousel, grid);
+            grid.style.display = 'none';
+
+            var currentIndex = 0;
+            var allSlides = track.querySelectorAll('.carousel-slide');
+
+            function goToSlide(index) {
+                if (index < 0) index = allSlides.length - 1;
+                if (index >= allSlides.length) index = 0;
+                allSlides[currentIndex].classList.remove('active');
+                allSlides[index].classList.add('active');
+                currentIndex = index;
+                counter.textContent = (currentIndex + 1) + ' / ' + allSlides.length;
+            }
+
+            prevBtn.addEventListener('click', function() {
+                goToSlide(currentIndex - 1);
+            });
+
+            nextBtn.addEventListener('click', function() {
+                goToSlide(currentIndex + 1);
+            });
+
+            // Swipe support
+            var touchStartX = 0;
+            var touchEndX = 0;
+
+            carousel.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                var diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 40) {
+                    if (diff > 0) {
+                        goToSlide(currentIndex + 1);
+                    } else {
+                        goToSlide(currentIndex - 1);
+                    }
+                }
+            }, { passive: true });
+        });
+    }
+
+    function destroyCarousels() {
+        var carousels = document.querySelectorAll('.mobile-carousel');
+        carousels.forEach(function(carousel) {
+            var pubId = carousel.getAttribute('data-pub-id');
+            var originalGrid = null;
+            var grids = document.querySelectorAll('.masonry-grid');
+            grids.forEach(function(g) {
+                if (g.getAttribute('data-pub-id') === pubId) originalGrid = g;
+            });
+            if (originalGrid) {
+                originalGrid.style.display = '';
+            }
+            carousel.remove();
+        });
+    }
+
+    function handleResize() {
+        if (isMobile()) {
+            initCarousels();
+        } else {
+            destroyCarousels();
+        }
+    }
+
+    // Run on init
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
 });
